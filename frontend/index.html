@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PressHub | Official Media Portal</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>PressHub</h1>
+      <p>Advanced Scalable Media Sharing</p>
+    </header>
+
+    <main>
+      <section id="upload-section">
+        <h2>Upload Official Media</h2>
+        <form id="uploadForm">
+          <input type="file" id="fileInput" accept="image/*" required />
+          <input type="text" id="titleInput" placeholder="Title" required />
+          <input type="text" id="locationInput" placeholder="Location" />
+          <textarea id="captionInput" placeholder="Caption"></textarea>
+          <button type="submit" id="uploadBtn">Upload to Cloud</button>
+        </form>
+        <div id="statusMessage"></div>
+      </section>
+
+      <hr />
+
+      <section id="feed-section">
+        <h2>Media Feed</h2>
+        <div id="imageGrid" class="grid"></div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
