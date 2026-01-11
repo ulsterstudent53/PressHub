@@ -1,37 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PressHub | Official Media Portal</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>PressHub</title>
+</head>
   <body>
-    <header>
-      <h1>PressHub</h1>
-      <p>Advanced Scalable Media Sharing</p>
-    </header>
 
     <main>
-      <section id="upload-section">
-        <h2>Upload Official Media</h2>
-        <form id="uploadForm">
-          <input type="file" id="fileInput" accept="image/*" required />
-          <input type="text" id="titleInput" placeholder="Title" required />
-          <input type="text" id="locationInput" placeholder="Location" />
-          <textarea id="captionInput" placeholder="Caption"></textarea>
-          <button type="submit" id="uploadBtn">Upload to Cloud</button>
-        </form>
-        <div id="statusMessage"></div>
-      </section>
+      <nav class="bg-white shadow-sm sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold text-blue-600">PressHub: Media Sharing for Officials</h1>
+    <button class="text-gray-500 hover:text-gray-700 font-medium">Logout</button>
+  </div>
+</nav>
 
-      <hr />
+<main class="max-w-7xl mx-auto px-4 py-8">
+  <section class="mb-12 bg-blue-50 border-2 border-dashed border-blue-200 rounded-xl p-8 text-center">
+    <h3 class="text-lg font-semibold text-blue-800 mb-4">Upload New File</h3>
+    <div class="flex flex-col md:flex-row gap-4 justify-center">
+      <input type="file" class="block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-100 file:text-blue-700 hover:file:bg-blue-200"/>
+      <input type="text" placeholder="Add a description..." class="px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none flex-grow">
+      <button class="bg-blue-600 text-white px-8 py-2 rounded-lg font-bold hover:shadow-lg transition">Publish</button>
+    </div>
+  </section>
 
-      <section id="feed-section">
-        <h2>Media Feed</h2>
-        <div id="imageGrid" class="grid"></div>
-      </section>
-    </main>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+    <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition cursor-pointer">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" class="w-full h-48 object-cover">
+      <div class="p-4">
+        <p class="font-semibold text-gray-800">Mountain Escape</p>
+        <p class="text-sm text-gray-500 truncate">Uploaded by @user_123</p>
+      </div>
+    </div>
+  </div>
+</main>
 
     <script src="app.js"></script>
   </body>

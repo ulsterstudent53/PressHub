@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>PressHub</title>
+  </head>
+  <body>
+    <div
+      class="min-h-screen flex items-center justify-center bg-gray-50 px-4 py-12 sm:px-6 lg:px-8"
+    >
+      <div class="max-w-md w-full space-y-8 bg-white p-10 rounded-xl shadow-lg">
+        <div class="text-center">
+          <h2 class="text-3xl font-extrabold text-gray-900">
+            Sign in to PressHub
+          </h2>
+          <p class="mt-2 text-sm text-gray-600">
+            Enter your credentials to access the creator feed
+          </p>
+        </div>
+        <form
+          id="loginForm"
+          onsubmit="handleLogin(event)"
+          class="mt-8 space-y-6"
+        >
+          <div class="rounded-md shadow-sm -space-y-px">
+            <input
+              type="email"
+              id="loginEmail"
+              required
+              class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+              placeholder="Email address"
+            />
+            <input
+              type="password"
+              id="loginPassword"
+              required
+              class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+              placeholder="Password"
+            />
+          </div>
+          <button
+            type="submit"
+            class="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition duration-150"
+          >
+            Sign in
+          </button>
+        </form>
+        <p class="text-center text-sm text-gray-600">
+          Don't have an account?
+          <a
+            href="signup.html"
+            class="font-medium text-blue-600 hover:text-blue-500"
+            >Sign up</a
+          >
+        </p>
+      </div>
+    </div>
+    <script src="auth.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
