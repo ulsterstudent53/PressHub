@@ -1,5 +1,5 @@
 const API_BASE_URL =
-  "https://api-presshub-dkfehqasd0gygpgr.swedencentral-01.azurewebsites.net/api/";
+  "https://api-presshub-dkfehqasd0gygpgr.swedencentral-01.azurewebsites.net/api";
 
 // Fetch the feed on load
 document.addEventListener("DOMContentLoaded", fetchFeed);
