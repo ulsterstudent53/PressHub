@@ -13,10 +13,11 @@ app.http("login", {
 
     try {
       const { resource: user } = await container.item(email, email).read();
-      if (!user) return { status: 401, body: "User not found" };
+      if (!user) return { status: 401, body: "Invalid User name or password." };
 
       const isMatch = await bcrypt.compare(password, user.password);
-      if (!isMatch) return { status: 401, body: "Invalid password" };
+      if (!isMatch)
+        return { status: 401, body: "Invalid User name or password." };
 
       return {
         status: 200,
