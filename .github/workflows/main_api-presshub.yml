@@ -10,8 +10,8 @@ on:
   workflow_dispatch:
 
 env:
-  AZURE_FUNCTIONAPP_PACKAGE_PATH: '.' # set this to the path to your web app project, defaults to the repository root
-  NODE_VERSION: '22.x' # set this to the node version to use (supports 8.x, 10.x, 12.x)
+  AZURE_FUNCTIONAPP_PACKAGE_PATH: "." # set this to the path to your web app project, defaults to the repository root
+  NODE_VERSION: "22.x" # set this to the node version to use (supports 8.x, 10.x, 12.x)
 
 jobs:
   build:
@@ -20,7 +20,7 @@ jobs:
       contents: read #This is required for actions/checkout
 
     steps:
-      - name: 'Checkout GitHub Action'
+      - name: "Checkout GitHub Action"
         uses: actions/checkout@v4
 
       - name: Setup Node ${{ env.NODE_VERSION }} Environment
@@ -28,7 +28,7 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
 
-      - name: 'Resolve Project Dependencies Using Npm'
+      - name: "Resolve Project Dependencies Using Npm"
         shell: bash
         run: |
           pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
@@ -63,19 +63,18 @@ jobs:
         run: |
           unzip release.zip
           rm release.zip
-      
+
       - name: Login to Azure
         uses: azure/login@v2
         with:
           client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_F33245E19BA84F9CAE11F96C2119451F }}
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_A934FDA58B684923B89779C1E4ABFFBD }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_A06CAE2A954042FEAEB920DBFA1F634B }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
-      - name: 'Run Azure Functions Action'
+      - name: "Run Azure Functions Action"
         uses: Azure/functions-action@v1
         id: fa
         with:
-          app-name: 'api-presshub'
-          slot-name: 'Production'
+          app-name: "api-presshub"
+          slot-name: "Production"
           package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
-          
